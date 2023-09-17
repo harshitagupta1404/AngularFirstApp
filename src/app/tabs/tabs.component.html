@@ -1,0 +1,17 @@
+<div>
+    <!-- take this code for the bootstrap version you have (in this case bootstrap 5) -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item" >
+            <a class="nav-link" [ngClass]="{active: chosenList==='All'}" aria-current="page" (click)="onChoose('All')" style="cursor:pointer">All</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [ngClass]="{active: chosenList==='Light'}" (click)="onChoose('Light')" style="cursor:pointer">Light</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [ngClass]="{active: chosenList==='Dark'}" (click)="onChoose('Dark')" style="cursor:pointer">Dark</a>
+        </li>
+    </ul>
+    <app-list [listChars]="getCharacters()" (updateInfo)="onCharUpdate($event)"></app-list>
+</div>
+
+<!-- <button class="btn btn-primary">Add</button> -->
